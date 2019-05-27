@@ -34,7 +34,9 @@ func main() {
 
 	sayHello(name)
 
-	despacito()
+	// despacito()
+
+	fmt.Println(makeMeme("danny devito"))
 }
 
 func sayHello(name string) {
@@ -47,12 +49,72 @@ func despacito() {
 	var newDespacito string
 
 	for i, letter := range despacito {
+		switch string(letter) {
+		case "e":
+			letter = '3'
+		case "t":
+			letter = '7'
+		case "o":
+			letter = '0'
+		case "i":
+			letter = '1'
+		}
+
 		if i%2 != 0 {
-			newDespacito = newDespacito + strings.ToUpper(string(letter))
+			newDespacito += strings.ToUpper(string(letter))
 		} else {
-			newDespacito = newDespacito + string(letter)
+			newDespacito += string(letter)
 		}
 	}
 
-	fmt.Println(newDespacito)
+	for {
+		fmt.Println(`
+		░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
+		░░░░░░░░▌▒█░░░░░░░░░░░▄▀▒▌░░░
+		░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒▐░░░
+		░░░░░░░▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐░░░
+		░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐░░░
+		░░░▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌░░░ 
+		░░▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒▌░░
+		░░▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐░░
+		░▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌░
+		░▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌░
+		▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒▐░
+		▐▒▒▐▀▐▀▒░▄▄▒▄▒▒▒▒▒▒░▒░▒░▒▒▒▒▌
+		▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒▒▒░▒░▒░▒▒▐░
+		░▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒░▒░▒░▒░▒▒▒▌░
+		░▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▄▒▒▐░░
+		░░▀▄▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▄▒▒▒▒▌░░
+		░░░░▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀░░░
+		░░░░░░▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀░░░░░
+		░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▀▀░░░░░░░░
+		`)
+		fmt.Println(newDespacito)
+	}
+}
+
+// makeMeme generates a meme.
+func makeMeme(s string) string {
+	var newDespacito string
+
+	for i, letter := range s {
+		switch string(letter) {
+		case "e":
+			letter = '3'
+		case "t":
+			letter = '7'
+		case "o":
+			letter = '0'
+		case "i":
+			letter = '1'
+		}
+
+		if i%2 != 0 {
+			newDespacito += strings.ToUpper(string(letter))
+		} else {
+			newDespacito += string(letter)
+		}
+	}
+
+	return newDespacito
 }
