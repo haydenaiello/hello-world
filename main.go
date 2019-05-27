@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	fmt.Println("Hello World!")
@@ -28,4 +31,28 @@ func main() {
 	const hairColor = "black"
 
 	fmt.Println(hairColor)
+
+	sayHello(name)
+
+	despacito()
+}
+
+func sayHello(name string) {
+	fmt.Print("Hello, ")
+	fmt.Println(name)
+}
+
+func despacito() {
+	despacito := "despacito"
+	var newDespacito string
+
+	for i, letter := range despacito {
+		if i%2 != 0 {
+			newDespacito = newDespacito + strings.ToUpper(string(letter))
+		} else {
+			newDespacito = newDespacito + string(letter)
+		}
+	}
+
+	fmt.Println(newDespacito)
 }
