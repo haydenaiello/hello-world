@@ -18,4 +18,14 @@ func main() {
 	name := "Hayden Aiello"
 
 	fmt.Println(name)
+
+	var age int
+
+	age = 13
+
+	fmt.Println(age)
+
+	const hairColor = "black"
+
+	fmt.Println(hairColor)
 }
